@@ -36,8 +36,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
           KC_EQUAL, S(KC_COMM), S(KC_BSLS), S(KC_DOT), S(KC_3), 
           KC_TRNS, KC_LBRC, KC_RBRC, S(KC_5), S(KC_MINUS), 
           
-          S(KC_8), S(KC_1), KC_MINUS, S(KC_EQUAL), S(KC_QUOTE), 
-          KC_GRAVE, S(KC_9), S(KC_0), S(KC_6), S(KC_4), 
+          LCMD_T(KC_ASTR), LOPT_T(KC_EXLM), LCTL_T(KC_MINUS), LSFT_T(KC_PLUS), S(KC_QUOTE), 
+          KC_GRAVE, RSFT_T(KC_LPRN), RCTL_T(KC_RPRN), ROPT_T(KC_CIRC), RCMD_T(KC_DLR), 
           
           S(KC_SLASH), S(KC_2), KC_BACKSLASH, KC_SLASH, KC_TRNS, 
           KC_TRNS, S(KC_LBRC), S(KC_RBRC), S(KC_GRAVE), S(KC_7), 
@@ -160,6 +160,48 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 return false;
             } 
             return true;
+        case LCMD_T(KC_ASTR):
+            if (record->tap.count && record->event.pressed) {
+                tap_code16(KC_ASTR);
+                return false;
+            } 
+            break;
+        case LOPT_T(KC_EXLM):
+            if (record->tap.count && record->event.pressed) {
+                tap_code16(KC_EXLM);
+                return false;
+            } 
+            break;
+        case LSFT_T(KC_PLUS):
+            if (record->tap.count && record->event.pressed) {
+                tap_code16(KC_PLUS);
+                return false;
+            } 
+            break;
+        case RSFT_T(KC_LPRN):
+            if (record->tap.count && record->event.pressed) {
+                tap_code16(KC_LPRN);
+                return false;
+            } 
+            break;
+        case RCTL_T(KC_RPRN):
+            if (record->tap.count && record->event.pressed) {
+                tap_code16(KC_RPRN);
+                return false;
+            } 
+            break;
+        case ROPT_T(KC_CIRC):
+            if (record->tap.count && record->event.pressed) {
+                tap_code16(KC_CIRC);
+                return false;
+            } 
+            break;
+        case RCMD_T(KC_DLR):
+            if (record->tap.count && record->event.pressed) {
+                tap_code16(KC_DLR);
+                return false;
+            } 
+            break;
     }
     return true;
 }
