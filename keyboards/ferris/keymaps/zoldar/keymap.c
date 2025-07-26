@@ -76,6 +76,12 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 tap_code16(LCTL(LOPT(KC_J)));
 		        return false;
             }
+        case LCTL_T(LCTL(KC_Z)):
+            if (record->tap.count && record->event.pressed) {
+                tap_code16(LCTL(KC_Z));
+                return false;
+            }
+            break;
         case LCTL_T(KC_EXLM):
             if (record->tap.count && record->event.pressed) {
                 tap_code16(KC_EXLM);
