@@ -23,10 +23,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
           KC_MPLY, KC_MPRV, KC_MNXT, KC_BTN2, KC_WH_U,
           LCTL(LOPT(KC_D)), LCTL(LOPT(KC_E)), LCTL(LOPT(KC_C)), LCTL(LOPT(KC_T)), LCTL(LOPT(KC_G)),
 
-          LCTL_T(LCTL(KC_Z)), KC_TRNS, KC_TRNS, KC_BTN1, KC_WH_D,
+          KC_TRNS, KC_TRNS, KC_TRNS, KC_BTN1, KC_WH_D,
           KC_PGUP, KC_HOME, KC_UP, KC_END, LCTL(LOPT(KC_I)),
 
-          KC_TRNS, KC_MUTE, KC_VOLD, KC_VOLU, KC_LSFT,
+          LCTL(KC_Z), KC_MUTE, KC_VOLD, KC_VOLU, KC_LSFT,
           KC_PGDN, KC_LEFT, KC_DOWN, KC_RIGHT, LCTL(LOPT(KC_K)),
 
           KC_TRNS, KC_TRNS,
@@ -76,12 +76,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 tap_code16(LCTL(LOPT(KC_J)));
 		        return false;
             }
-        case LCTL_T(LCTL(KC_Z)):
-            if (record->tap.count && record->event.pressed) {
-                tap_code16(LCTL(KC_Z));
-                return false;
-            }
-            break;
         case LCTL_T(KC_EXLM):
             if (record->tap.count && record->event.pressed) {
                 tap_code16(KC_EXLM);
