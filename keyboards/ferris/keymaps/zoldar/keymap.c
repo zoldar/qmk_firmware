@@ -26,7 +26,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
           KC_TRNS, OSM(MOD_LCTL), OSM(MOD_LALT), KC_BTN1, LCMD(KC_LEFT),
           KC_PGUP, KC_HOME, KC_UP, KC_END, LCTL(LOPT(KC_I)),
 
-          LCTL(KC_Z), KC_MUTE, KC_NO, OSM(MOD_LGUI), KC_NO,
+          LCTL(KC_Z), KC_MUTE, LGUI(KC_C), OSM(MOD_LGUI), LGUI(KC_V),
           KC_PGDN, KC_LEFT, KC_DOWN, KC_RIGHT, LCTL(LOPT(KC_K)),
 
           KC_TRNS, KC_TRNS,
@@ -39,7 +39,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
           KC_EXLM, KC_ASTR, KC_SLSH, KC_EQL, KC_AMPR,
           S(KC_MINS), KC_LPRN, KC_RPRN, KC_SCLN, KC_DQUO,
 
-          KC_NUBS, KC_PLUS, KC_LBRC, KC_RBRC, KC_PERC,
+          KC_BSLS, KC_PLUS, KC_LBRC, KC_RBRC, KC_PERC,
           KC_AT  , S(KC_SLSH), KC_COMM, KC_DOT , KC_QUOT,
 
           KC_TRNS, S(KC_SCLN),
