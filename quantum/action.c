@@ -337,9 +337,13 @@ void register_mouse(uint8_t mouse_keycode, bool pressed) {
     // if mousekeys is enabled, let it do the brunt of the work
     if (pressed) {
         mousekey_on(mouse_keycode);
+        add_key(mouse_keycode);
     } else {
         mousekey_off(mouse_keycode);
+        del_key(mouse_keycode);
     }
+    send_keyboard_report();
+
     // should mousekeys send report, or does something else handle this?
     switch (mouse_keycode) {
 #    if defined(PS2_MOUSE_ENABLE) || defined(POINTING_DEVICE_ENABLE)
